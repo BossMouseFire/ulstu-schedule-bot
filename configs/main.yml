@@ -1,0 +1,5 @@
+messages:
+  answers:
+    start: "Привет!"
+    how_are_you: "Нормально :)"
+    unknown: "Я не знаю такой команды :("
