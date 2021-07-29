@@ -1,4 +1,4 @@
-module github.com/tmrrwnxtsn/ulstu-schedule-vk-bot
+module github.com/tmrrwnxtsn/ulstu-schedule-bot
 
 go 1.16
 
