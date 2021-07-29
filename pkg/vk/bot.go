@@ -3,7 +3,7 @@ package vk
 import (
 	"github.com/SevereCloud/vksdk/v2/api"
 	"github.com/SevereCloud/vksdk/v2/longpoll-bot"
-	"github.com/tmrrwnxtsn/ulstu-schedule-vk-bot/internal/config"
+	"github.com/tmrrwnxtsn/ulstu-schedule-vk-bot/pkg/config"
 	"log"
 )
 

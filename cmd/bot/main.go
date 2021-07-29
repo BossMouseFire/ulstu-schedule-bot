@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/tmrrwnxtsn/ulstu-schedule-vk-bot/internal/config"
-	"github.com/tmrrwnxtsn/ulstu-schedule-vk-bot/internal/vk"
+	"github.com/tmrrwnxtsn/ulstu-schedule-vk-bot/pkg/config"
+	"github.com/tmrrwnxtsn/ulstu-schedule-vk-bot/pkg/vk"
 	"log"
 )
 
