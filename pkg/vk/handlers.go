@@ -12,8 +12,8 @@ import (
 )
 
 const (
-	msgStart     = "привет"
-	msgHowAreYou = "как дела?"
+	msgStart       = "привет"
+	msgChangeGroup = "изменить"
 )
 
 func (b *Bot) handleNewMessages() {
@@ -39,11 +39,11 @@ func (b *Bot) handleNewTextMessage(obj events.MessageNewObject) error {
 
 	switch strings.ToLower(obj.Message.Text) {
 	case msgStart:
-		answer = b.messages.Start
-	case msgHowAreYou:
-		answer = b.messages.HowAreYou
+		answer = b.messages.StartWithoutGroup
+	case msgChangeGroup:
+		answer = b.messages.ChangeGroup
 	default:
-		answer = b.messages.Unknown
+		answer = b.messages.GroupNotSelected
 	}
 
 	err := b.sendMessage(obj.Message.FromID, answer)

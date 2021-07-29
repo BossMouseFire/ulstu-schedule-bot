@@ -14,12 +14,30 @@ type Config struct {
 
 type Messages struct {
 	Answers
+	Errors
+	Additions
 }
 
 type Answers struct {
-	Start     string `mapstructure:"start"`
-	HowAreYou string `mapstructure:"how_are_you"`
-	Unknown   string `mapstructure:"unknown"`
+	StartWithGroup       string `mapstructure:"start_with_group"`
+	StartWithoutGroup    string `mapstructure:"start_without_group"`
+	ChangeGroup          string `mapstructure:"change_group"`
+	Back                 string `mapstructure:"back"`
+	ScheduleWithoutGroup string `mapstructure:"schedule_without_group"`
+	ScheduleWithGroup    string `mapstructure:"schedule_with_group"`
+	Thanks               string `mapstructure:"thanks"`
+}
+
+type Additions struct {
+	ThanksNotSubscribed   string `mapstructure:"thanks_not_subscribed"`
+	ScheduleNotSubscribed string `mapstructure:"schedule_not_subscribed"`
+	ChangesInKeiSchedule  string `mapstructure:"changes_in_kei_schedule"`
+}
+
+type Errors struct {
+	IncorrectGroupName   string `mapstructure:"incorrect_group_name"`
+	GroupNotSelected     string `mapstructure:"group_not_selected"`
+	StudentNotSubscribed string `mapstructure:"student_not_subscribed"`
 }
 
 func Init() (*Config, error) {
@@ -49,6 +67,16 @@ func unmarshal(cfg *Config) error {
 	}
 
 	err = viper.UnmarshalKey("messages.answers", &cfg.Messages.Answers)
+	if err != nil {
+		return err
+	}
+
+	err = viper.UnmarshalKey("messages.additions", &cfg.Messages.Additions)
+	if err != nil {
+		return err
+	}
+
+	err = viper.UnmarshalKey("messages.errors", &cfg.Messages.Errors)
 	if err != nil {
 		return err
 	}
